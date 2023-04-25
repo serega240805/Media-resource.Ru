@@ -88,23 +88,47 @@ body {
 	background: url(../images/Header/background.jpg) center no-repeat;
 	font-family: var(--font-family-1);
 	background-size: cover;
+	@include breakpoint(ls) {
+		background: url(../images/Header/background.jpg) center center no-repeat;
+	}
+	@include breakpoint(xs) {
+		background: url(../images/Header/background.png) 0px 0px no-repeat;
+	}
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding-top: 50px;
 		margin-bottom: 195px;
+		@include breakpoint(ls) {
+			padding-top: 10px;
+			margin-bottom: 55px;
+		}
 	}
 
 	&__box {
 		display: flex;
 	}
 
+	&__whatsapp {
+		display: flex;
+		@include breakpoint(lg) {
+			display: none;
+		}
+	}
+
 	&__logo {
 		margin-right: 10px;
+		@include breakpoint(ls) {
+			margin-right: 0px;
+			object-fit: cover;
+		}
 	}
 
 	&__right {
+		@include breakpoint(ls) {
+			display: none;
+		}
 	}
 
 	&__name {
@@ -121,6 +145,9 @@ body {
 	}
 
 	&__nav {
+		@include breakpoint(lg) {
+			display: none;
+		}
 	}
 
 	&__list {
@@ -186,6 +213,136 @@ body {
 		}
 	}
 
+	.toggle-nav {
+		background-color: rgba(0, 0, 0, 0.8);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease-in-out;
+		@include breakpoint(minlg) {
+			display: none;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			left: 50%;
+			top: 170px;
+			transition: all 0.3s ease-in-out;
+			transform: translateX(-50%);
+
+			li {
+				transform: translateY(50px);
+				opacity: 0;
+
+				a {
+					display: block;
+					font-size: 2em;
+					text-decoration: none;
+					padding: 10px 0;
+					text-align: center;
+					color: #fff;
+					font-weight: bold;
+					transition: all 0.2s ease-in-out;
+					text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+				}
+				button {
+					font-weight: 500;
+					font-size: 17px;
+					line-height: 25px;
+					letter-spacing: 0.2px;
+					color: #ffffff;
+					padding: 13.5px 46px;
+					background: none;
+					border: 1px solid #ffffff;
+					margin-top: 30px;
+					filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
+					&:hover {
+						transform: translateY(-10px);
+						transition: 600ms;
+					}
+				}
+			}
+		}
+	}
+
+	.toggle-btn {
+		display: block;
+		position: fixed;
+		z-index: 100;
+		right: 40px;
+		top: 30px;
+		cursor: pointer;
+		@include breakpoint(minlg) {
+			display: none;
+		}
+
+		.bar {
+			width: 30px;
+			height: 2px;
+			margin: 7px auto;
+			background-color: #fff;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+
+			&:nth-child(2) {
+				width: 20px;
+			}
+		}
+	}
+
+	#toggle:checked {
+		& ~ nav {
+			opacity: 1;
+			visibility: visible;
+			z-index: 99;
+			ul {
+				top: 70px;
+
+				li {
+					transform: translateY(0px);
+					opacity: 1;
+
+					@for $i from 1 through 4 {
+						$t: $i * 0.1;
+						&:nth-child(#{$i}) {
+							transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) #{$t}s;
+						}
+					}
+				}
+			}
+		}
+
+		& + label.toggle-btn {
+			.bar {
+				background-color: red;
+
+				&:nth-child(2) {
+					transform: translateX(50px);
+					opacity: 0;
+				}
+
+				&:nth-child(1) {
+					transform: translateY(10px) rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: translateY(-8px) rotate(-45deg);
+				}
+			}
+		}
+	}
+
 	&__body {
 		display: flex;
 		flex-direction: column;
@@ -208,6 +365,7 @@ body {
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			position: relative;
+			white-space: nowrap;
 			&::after {
 				content: "";
 				width: 505px;
@@ -217,6 +375,17 @@ body {
 				position: absolute;
 				background: url(../images/Header/subtitle.svg);
 			}
+			@include breakpoint(ls) {
+				&::after {
+					width: 251px;
+					height: 8px;
+					background: url(../images/Header/subtitle-min.svg);
+				}
+			}
+		}
+		@include breakpoint(ls) {
+			font-size: 24px;
+			line-height: 32px;
 		}
 	}
 
@@ -226,6 +395,9 @@ body {
 		line-height: 1.875rem;
 		max-width: 45.625rem;
 		margin-bottom: 3.75rem;
+		@include breakpoint(ls) {
+			display: none;
+		}
 	}
 
 	&__body-btn {
@@ -239,7 +411,7 @@ body {
 		box-shadow: 0.0625rem 0.0625rem 1.25rem 0.5rem var(--main-color);
 		position: relative;
 		z-index: 5;
-		margin-bottom: 13.75rem;
+		margin-bottom: 220px;
 		transition: 400ms;
 		&:hover {
 			transform: translateY(-0.625rem);
@@ -261,10 +433,10 @@ body {
 		&::before {
 			content: "";
 			position: absolute;
-			width: 25.375rem;
-			height: 5.625rem;
-			top: -0.3125rem;
-			left: -0.375rem;
+			width: 406px;
+			height: 90px;
+			top: -5px;
+			left: -6px;
 			z-index: 1;
 			right: 0;
 			bottom: 0;
@@ -277,14 +449,31 @@ body {
 			-webkit-mask-composite: destination-out;
 			mask-composite: exclude;
 		}
+		@include breakpoint(ls) {
+			font-size: 12px;
+			line-height: 24px;
+			padding: 18px;
+			margin-bottom: 180px;
+			&::before {
+				width: 235px;
+				height: 70px;
+			}
+		}
 	}
 
 	&__bottom {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 6rem;
-		padding-bottom: 6.375rem;
-	}
+		gap: 96px;
+		padding-bottom: 102px;
+		@include breakpoint(ls) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 30px;
+			padding-bottom: 80px;
+			}
+		}
 
 	&__flex {
 		display: flex;
@@ -295,10 +484,10 @@ body {
 			&::before {
 				content: "";
 				position: absolute;
-				right: -3.125rem;
-				bottom: 1.25rem;
-				width: 0.0625rem;
-				height: 5rem;
+				right: -50px;
+				bottom: 20px;
+				width: 1px;
+				height: 80px;
 				background: #363656;
 			}
 		}
@@ -324,19 +513,34 @@ body {
 				background: #363656;
 			}
 		}
+		@include breakpoint(ls) {
+			&::before {
+				display: none;
+			}
+		}
 	}
 
 	&__num {
 		font-weight: 300;
-		font-size: 3.125rem;
-		line-height: 4.625rem;
-		margin-bottom: 1.25rem;
+		font-size: 50px;
+		line-height: 74px;
+		margin-bottom: 20px;
+		@include breakpoint(ls) {
+			font-size: 32px;
+			line-height: 32px;
+			white-space: nowrap;
+		}
 	}
 
 	&__text {
 		font-weight: 400;
 		font-size: var(--font-size);
-		line-height: 1.875rem;
+		line-height: 30px;
+		text-align: center;
+		@include breakpoint(ls) {
+			font-size: 16px;
+			line-height: 30px;
+		}
 	}
 }
 .main {
@@ -345,11 +549,14 @@ body {
 		font-family: var(--font-family-1);
 		padding-top: 1px;
 		.container {
-			max-width: 81.875rem;
+			max-width: 1310px;
 		}
 		&__tabs {
-			margin: 6.875rem 0rem 10.625rem 0rem;
-		}
+			margin: 110px 0px 170px 0px;
+			@include breakpoint(ls) {
+				margin: 0px 0px 170px 0px;
+				}
+			}
 
 		&__box {
 			display: flex;
@@ -1092,14 +1299,13 @@ body {
 .go-top {
 	position: fixed;
 	right: 30px;
-    top: 85%;
+	top: 85%;
 	transform: translateY(-50%);
 	cursor: pointer;
 	display: none;
 	font-size: 20px;
 }
 .go-top:hover {
-	
 }
 .go-top--show {
 	display: flex;
@@ -1107,10 +1313,10 @@ body {
 	text-align: center;
 	gap: 5px;
 }
-.top-text{
-	font-family: 'Montserrat';
+.top-text {
+	font-family: "Montserrat";
 	font-weight: 500;
-font-size: 13px;
-line-height: 30px;
-color: var(--color-text);
+	font-size: 13px;
+	line-height: 30px;
+	color: var(--color-text);
 }
