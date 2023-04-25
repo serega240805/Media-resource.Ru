@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Gilroy;
+    font-weight: 500;
+    font-style: normal;
+    src: local("Gilroy"),
+        url("../fonts/Gilroy-Semibold.woff2"),
+        url("../fonts/Gilroy-Semibold.woff"),
+        url("../fonts/Gilroy-Semibold.eot");
+    font-display: swap;
+}
