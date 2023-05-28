@@ -1,32 +1,40 @@
 'use strict';
 
-const goTopBtn = document.querySelector(".go-top");
+const tabs = document.querySelector(".services__tabs");
+const tabButton = document.querySelectorAll(".tab-button");
+const contents = document.querySelectorAll(".content");
 
+tabs.onclick = e => {
+    const id = e.target.dataset.id;
+    if (id) {
+        tabButton.forEach(btn => {
+            btn.classList.remove("active");
+        });
+        e.target.classList.add("active");
 
-window.addEventListener("scroll", trackScroll);
+        contents.forEach(content => {
+            content.classList.remove("active");
+        });
+        const element = document.getElementById(id);
+        element.classList.add("active");
+    }
+}
 
-goTopBtn.addEventListener("click", goTop);
+// На верх
 
-function trackScroll() {
+const btnUp = document.querySelector('.btn-up');
 
-    const scrolled = window.pageYOffset;
-
-    const coords = document.documentElement.clientHeight;
-
-    if (scrolled > coords) {
-
-        goTopBtn.classList.add("go-top--show");
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 200) {
+        btnUp.classList.add('show');
     } else {
-
-        goTopBtn.classList.remove("go-top--show");
+        btnUp.classList.remove('show');
     }
-}
+});
 
-function goTop() {
-
-    if (window.pageYOffset > 0) {
-        // скроллим наверх
-        window.scrollBy(0, -35);
-        setTimeout(goTop, 0);
-    }
-}
+btnUp.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
