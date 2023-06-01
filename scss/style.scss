@@ -85,14 +85,14 @@ body {
 /*------------------------------------*/
 
 .header {
-	background: url(../images/Header/background.jpg) center no-repeat;
+	background: url(../images/Header/background.webp) center no-repeat;
 	font-family: var(--font-family-1);
 	background-size: cover;
 	@include breakpoint(ls) {
-		background: url(../images/Header/background.jpg) center center no-repeat;
+		background: url(../images/Header/background.webp) center center no-repeat;
 	}
 	@include breakpoint(xs) {
-		background: url(../images/Header/background.png) 0px 0px no-repeat;
+		background: url(../images/Header/background-mob.webp) 0px 0px no-repeat;
 	}
 	&__top {
 		display: flex;
@@ -545,7 +545,7 @@ body {
 	}
 }
 .main {
-	background: url(/images/Main/bg.png) center no-repeat;
+	background: url(/images/Main/bg.webp) center no-repeat;
 	.services {
 		font-family: var(--font-family-1);
 		padding-top: 1px;
@@ -565,10 +565,11 @@ body {
 			gap: 20px;
 			border: 1px solid #2d2d5a;
 			border-radius: 12px;
-			padding: 25px;
+			padding: 15px;
 		}
 
 		&__box-left {
+			margin: 5px 0px 0px 5px;
 		}
 
 		&__box-right {
@@ -576,22 +577,23 @@ body {
 
 		&__box-title {
 			font-weight: 600;
-			font-size: 1.125rem;
-			margin-bottom: 0.3125rem;
+			font-size: 18px;
+			margin-bottom: 5px;
+			white-space: nowrap;
 		}
 
 		&__box-text {
 			font-weight: 400;
-			font-size: 0.9375rem;
-			line-height: 1.25rem;
-			max-width: 18.125rem;
-			margin-bottom: 0.9375rem;
+			font-size: 15px;
+			line-height: 20px;
+			max-width: 290px;
+			margin-bottom: 5px;
 		}
 
 		&__box-link {
 			font-weight: 700;
-			font-size: 0.8125rem;
-			line-height: 1.875rem;
+			font-size: 13px;
+			line-height: 30px;
 			text-transform: uppercase;
 			margin-left: 10px;
 			background: var(--main-color);
@@ -702,7 +704,7 @@ body {
 			align-items: center;
 			flex-direction: column;
 			padding: 80px 220px;
-			background: url(../images/Main/consultation/consultation-bg.png) center no-repeat;
+			background: url(../images/Main/consultation/consultation-bg.webp) center no-repeat;
 			background-size: 120% 135%;
 			box-shadow: 0px 14px 44px #02040f, inset 0px 10px 62px #30385f;
 			border-radius: 130px 20px 20px 20px;
@@ -975,7 +977,7 @@ body {
 		}
 	}
 	.answer {
-		margin-bottom: 160px;
+		padding-bottom: 160px;
 		.container {
 			max-width: 1170px;
 		}
@@ -992,7 +994,7 @@ body {
 				height: 555px;
 				right: 30px;
 				bottom: 0;
-				background: url(../images/Main/answer/woman.png);
+				background: url(../images/Main/answer/woman.webp);
 			}
 			&::before {
 				content: "";
@@ -1001,7 +1003,7 @@ body {
 				height: 134px;
 				left: -140px;
 				bottom: 400px;
-				background: url(../images/Main/answer/1.png);
+				background: url(../images/Main/answer/1.webp);
 			}
 		}
 
@@ -1062,9 +1064,9 @@ body {
 				content: "";
 				position: absolute;
 				width: 332px;
-				height: 72px;
+				height: 70px;
 				top: -5px;
-				left: -6px;
+				left: -5.5px;
 				z-index: 1;
 				right: 0;
 				bottom: 0;
@@ -1090,7 +1092,7 @@ body {
 		height: 459px;
 		left: 100px;
 		top: -100px;
-		background: url(../images/map/contact.png);
+		background: url(../images/map/contact.webp);
 	}
 	iframe {
 		margin: 0 auto;
@@ -1100,7 +1102,7 @@ body {
 	padding-top: 90px;
 	padding-bottom: 55px;
 	font-family: var(--font-family-1);
-	background: url(../images/Footer/bg.png) -800px -660px no-repeat;
+	background: url(../images/Footer/bg.webp) -800px -660px no-repeat;
 	.container {
 		max-width: 1500px;
 	}
@@ -1297,6 +1299,9 @@ body {
 	&__social-item {
 	}
 }
+
+// btn-up
+
 .btn-up {
 	position: fixed;
 	right: 30px;
