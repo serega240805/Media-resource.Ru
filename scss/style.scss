@@ -19,8 +19,8 @@
 	:root {
 		--main-color: linear-gradient(93.89deg, #f71b2c -1.38%, #ed1b8d 45.84%, #ff7027 100.94%);
 		--color-text: #ffffff;
-		--font-size: 18px;
-		--font-size-title: 50px;
+		--font-size: 16px;
+		--font-size-title: 24px;
 		--font-family-1: "Montserrat", sans-serif;
 		--font-family-2: "Roboto", sans-serif;
 		--font-family-3: "Inter", sans-serif;
@@ -852,6 +852,16 @@ body {
 				height: 70px;
 				background: url(../images/Main/consultation/tipo-telegramm.svg);
 			}
+			@include breakpoint(lg) {
+				padding: 40px 20px;
+				border-radius: 80px 10px 10px 10px;
+				background: none;
+				&::before {
+					width: 40px;
+					height: 40px;
+					background: url(../images/Main/consultation/tipo-telegramm-mob.svg);
+				}
+			}
 		}
 
 		&__title {
@@ -860,6 +870,12 @@ body {
 			margin-bottom: 25px;
 			text-align: center;
 			white-space: nowrap;
+			@include breakpoint(lg) {
+				max-width: 268px;
+				font-size: 18px;
+				line-height: 24px;
+				white-space: normal;
+			}
 		}
 
 		&__text {
@@ -868,6 +884,12 @@ body {
 			line-height: 30px;
 			margin-bottom: 58px;
 			text-align: center;
+			color: #c1caf1;
+			@include breakpoint(lg) {
+				font-size: 14px;
+				line-height: 20px;
+				margin-bottom: 25px;
+			}
 		}
 
 		&__box {
@@ -883,6 +905,20 @@ body {
 				height: 18px;
 				background: url(../images/Main/consultation/tel.svg);
 			}
+			@include breakpoint(lg) {
+				gap: 20px;
+				flex-direction: column;
+				&::after {
+					left: 20px;
+					bottom: 100px;
+				}
+			}
+			@include breakpoint(xs) {
+				&::after {
+					left: 15px;
+					bottom: 96px;
+				}
+			}
 		}
 
 		&__input {
@@ -894,8 +930,16 @@ body {
 			line-height: 22px;
 			color: var(--color-text);
 			position: relative;
+			border: 1px solid #26325f;
 			placeholder {
 				color: #71719c;
+			}
+			@include breakpoint(lg) {
+				padding: 17px 10px 17px 60px;
+			}
+			@include breakpoint(xs) {
+				line-height: 20px;
+				padding: 17px 0px 17px 40px;
 			}
 		}
 
@@ -946,6 +990,21 @@ body {
 				mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
 				-webkit-mask-composite: destination-out;
 				mask-composite: exclude;
+			}
+			@include breakpoint(lg) {
+				&::before {
+					width: 352px;
+					height: 71px;
+				}
+			}
+			@include breakpoint(xs) {
+				font-size: 12px;
+				line-height: 15px;
+				padding: 21px 10px;
+				&::before {
+					width: 256px;
+					height: 68px;
+				}
 			}
 		}
 	}
