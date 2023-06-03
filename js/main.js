@@ -1,27 +1,12 @@
 'use strict';
 
-import anime from './node_modules/animejs/lib/anime.es.js';
-
-const number = [12, 1258, 300, 35],
-    numberElement = document.querySelectorAll('.header__num');
-
-numberElement.forEach((element, index) => {
-    anime({
-        targets: element,
-        innerHTML: [0, number[index]],
-        duration: 5000,
-        round: 1,
-        easing: 'easeOutExpo'
-    });
-});
-
 window.addEventListener('DOMContentLoaded', () => {
 
     //  tabs
 
     const tabs = document.querySelector(".services__tabs"),
-    tabButton = document.querySelectorAll(".tab-button"),
-    contents = document.querySelectorAll(".content");
+        tabButton = document.querySelectorAll(".tab-button"),
+        contents = document.querySelectorAll(".content");
 
     tabs.onclick = e => {
         const id = e.target.dataset.id;

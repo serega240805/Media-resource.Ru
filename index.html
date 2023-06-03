@@ -8,12 +8,7 @@
 
 	<link rel="shortcut icon" href="./images/Header/logo.webp" type="image/x-icon">
 
-
 	<link rel="stylesheet" href="css/style.css">
-
-	<script src="./js/main.js" type="module" defer></script>
-	<script src="./js/node_modules/animejs/lib/anime.min.js" defer></script>
-
 
 	<title>Медиа Ресурс.РФ</title>
 </head>
@@ -83,7 +78,10 @@
 						<p class="header__text">Клиентов по всей Стране</p>
 					</div>
 					<div class="header__flex">
-						<p class="header__num">300 <span>млн.</span></p>
+						<div>
+							<p class="header__num">300</p>
+							<span>млн.</span>
+						</div>
 						<p class="header__text">Откручивается в год в рекламе</p>
 					</div>
 					<div class="header__flex">
@@ -219,6 +217,73 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Mobile -->
+
+					<div class="services__mob">
+						<p class="services__mob-title">Онлайн продвижение</p>
+
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/1.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Ведение соц.сетей (SMM)</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/2.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Дизайн полиграфии</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/3.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Реклама в Яндекс Директ</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<button class="services-mob-btn">Смотреть все услуги</button>
+					</div>
+					<div class="services__mob">
+						<p class="services__mob-title">Офлайн продвижение</p>
+
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/4.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Таргетированная реклама</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/5.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Создание сайтов</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<div class="services__mob-box">
+							<div class="services__box-top">
+								<img src="./images/Main/services/6.webp" alt="#" class="services__box-left">
+								<p class="services__mob-box-title">Визитки/листотвки</p>
+							</div>
+							<p class="services__box-text">Давно выяснено, что при оценке дизайна и
+								композиции читаемый текст мешает сосредоточиться.</p>
+							<a href="#" class="services__mob-box-link">Подробнее</a>
+						</div>
+						<button class="services-mob-btn">Смотреть все услуги</button>
+					</div>
 				</div>
 			</section>
 			<section class="consultation">
@@ -352,7 +417,9 @@
 			</section>
 		</main>
 		<section class="map">
-			<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A88f436b910cb073f0df959ba8286dc00473c1e5fc8f0be556ffbf26522f2989d&amp;source=constructor" width="1920" height="600"></iframe>
+			<iframe
+				src="https://yandex.ru/map-widget/v1/?um=constructor%3A88f436b910cb073f0df959ba8286dc00473c1e5fc8f0be556ffbf26522f2989d&amp;source=constructor"
+				width="1920" height="600"></iframe>
 		</section>
 		<footer class="footer">
 			<div class="container">
@@ -479,16 +546,19 @@
 									<a href="#" class="footer__social"><img src="./images/Footer/vk.svg" alt="#"></a>
 								</li>
 								<li class="footer__social-item">
-									<a href="#" class="footer__social"><img src="./images/Footer/facebook.svg" alt="#"></a>
+									<a href="#" class="footer__social"><img src="./images/Footer/facebook.svg"
+											alt="#"></a>
 								</li>
 								<li class="footer__social-item">
 									<a href="#" class="footer__social"><img src="./images/Footer/OK.svg" alt="#"></a>
 								</li>
 								<li class="footer__social-item">
-									<a href="#" class="footer__social"><img src="./images/Footer/instagram.svg" alt="#"></a>
+									<a href="#" class="footer__social"><img src="./images/Footer/instagram.svg"
+											alt="#"></a>
 								</li>
 								<li class="footer__social-item">
-									<a href="#" class="footer__social"><img src="./images/Footer/linkedin.svg" alt="#"></a>
+									<a href="#" class="footer__social"><img src="./images/Footer/linkedin.svg"
+											alt="#"></a>
 								</li>
 							</ul>
 						</div>
@@ -497,10 +567,20 @@
 			</div>
 		</footer>
 	</div>
+
+
 	<div class="btn-up">
 		<img src="/images/top-btn.svg" alt="top-btn">
 		<p class="top-text">на верх</p>
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+	<script src="./js/main.js"></script>
+
+	<script src="./js/animation.js"></script>
 </body>
 
 </html>
