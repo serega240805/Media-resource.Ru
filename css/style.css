@@ -291,11 +291,10 @@ body {
 .header__top-btn {
   font-weight: 700;
   font-size: 16px;
-  line-height: 36px;
+  line-height: 40px;
   margin-left: 50px;
   color: var(--color-text);
   padding: 10px 50px;
-  margin-left: 60px;
   background: none;
   position: relative;
   white-space: nowrap;
@@ -574,8 +573,8 @@ body {
 .header__body-btn::before {
   content: "";
   position: absolute;
-  width: 456px;
-  height: 100px;
+  width: 406px;
+  height: 90px;
   top: -5px;
   left: -6px;
   z-index: 1;
@@ -1740,6 +1739,7 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 260%;
+  white-space: nowrap;
   color: var(--color-text);
 }
 .footer__link:hover {
