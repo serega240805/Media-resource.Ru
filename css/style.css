@@ -1649,7 +1649,7 @@ body {
     letter-spacing: 0;
   }
   .main .answer__btn::before {
-    width: 262px;
+    width: 255px;
     height: 65px;
   }
 }

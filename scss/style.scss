@@ -1419,17 +1419,13 @@ body {
 				padding: 20px 20px;
 				margin-left: 0;
 				letter-spacing: 0;
-				&::after {
-				}
 				&::before {
-					width: 262px;
+					width: 255px;
 					height: 65px;
 				}
 			}
 			@include breakpoint(xs) {
 				font-size: 14px;
-				&::after {
-				}
 				&::before {
 					width: 247px;
 					height: 65px;
