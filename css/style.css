@@ -1168,7 +1168,7 @@ body {
 }
 @media (max-width: 992px) {
   .main .consultation__btn::before {
-    width: 352px;
+    width: 354px;
     height: 71px;
   }
 }
