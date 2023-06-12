@@ -1502,6 +1502,9 @@ body {
 
 	position: relative;
 	color: #0f0f34;
+	iframe{
+		width: 100%;
+	}
 	&::after {
 		content: "";
 		position: absolute;

@@ -1735,6 +1735,9 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.map iframe {
+  width: 100%;
+}
 .map::after {
   content: "";
   position: absolute;

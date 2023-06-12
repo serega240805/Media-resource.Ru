@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
 
     //  tabs
 
@@ -26,21 +26,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // button-up
 
-    const btnUp = document.querySelector('.btn-up');
+    const btnUp = document.querySelector(".btn-up");
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 200) {
-            btnUp.classList.add('show');
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            btnUp.classList.add("show");
         } else {
-            btnUp.classList.remove('show');
+            btnUp.classList.remove("show");
         }
     });
 
-    btnUp.addEventListener('click', () => {
+    btnUp.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     });
+
+    // Other
 
 });
