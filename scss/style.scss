@@ -652,7 +652,6 @@ body {
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
-			text-fill-color: transparent;
 			color: var(--color-text);
 			position: relative;
 			&::before {
@@ -809,7 +808,6 @@ body {
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
-			text-fill-color: transparent;
 			color: var(--color-text);
 			position: relative;
 			&::before {
@@ -1286,7 +1284,7 @@ body {
 	}
 	.answer {
 		margin-top: calc(var(--base-margin-top) * 2);
-		padding-bottom: var(--base-margin-top);
+		padding-bottom: calc(var(--base-margin-top) * 2);
 		.container {
 			max-width: 1170px;
 		}
@@ -1455,7 +1453,6 @@ body {
 	}
 }
 .map {
-	margin-top: var(--base-margin-top);
 	@include breakpoint(xs) {
 		background: url(../images/Map/background.svg) 180% -10% no-repeat;
 	}
