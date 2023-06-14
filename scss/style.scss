@@ -354,7 +354,7 @@ body {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			gap: 21px;
+			gap: 26px;
 			padding-left: 0;
 		}
 
@@ -363,7 +363,7 @@ body {
 
 		&__link {
 			font-weight: 600;
-			font-size: clamp(14px, 2cqw, 92px);
+			font-size: clamp(18px, 3cqw, 92px);
 			line-height: 17px;
 			color: #bdbde9;
 		}
@@ -1056,7 +1056,7 @@ body {
 					height: 159px;
 					right: -72px;
 					top: -95px;
-					background: url(../images/Main/preference/1-min.png);
+					background: url(../images/Main/preference/1-min.webp);
 				}
 			}
 		}
