@@ -552,6 +552,13 @@ body {
 			&::before {
 				display: none;
 			}
+			div {
+				display: flex;
+				align-items: center;
+				span {
+					font-size: 18px;
+				}
+			}
 		}
 		@include breakpoint(xs) {
 			div {
