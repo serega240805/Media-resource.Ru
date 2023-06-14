@@ -2,6 +2,23 @@
 
 window.addEventListener("DOMContentLoaded", () => {
 
+    // Burger-menu
+
+    const burger = document.querySelector(".burger"),
+        burgerMenu = document.querySelector(".menu")
+
+    burger.addEventListener("click", (e) => {
+        burger.classList.toggle("burger--opened");
+        burger.classList.toggle("burger--closed");
+        burgerMenu.classList.toggle("active-menu");
+        burgerMenu.classList.toggle("hide");
+        if (burgerMenu.classList.contains("active-menu")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    });
+
     //  tabs
 
     const tabs = document.querySelector(".services__tabs"),
